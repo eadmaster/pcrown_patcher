@@ -5,7 +5,7 @@
 	<title>Princess Crown Translation Online Patcher</title>
 	<meta http-equiv="content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-
+	
 	<!-- Rom Patcher JS needed CSS/JS files -->
 	<link type="text/css" rel="stylesheet" href="./rom-patcher-js/style.css" media="all" />
 	<script type="text/javascript" src="./rom-patcher-js/RomPatcher.webapp.js"></script>
@@ -30,7 +30,7 @@
 				}*/
 				{
 					// multiple https://github.com/marcrobledo/RomPatcher.js/wiki/Embedding-Rom-Patcher-JS
-					file: 'https://github.com/eadmaster/pcrown/releases/latest/download/Princess.Crown.English.Offline.Patcher.zip',
+					file: 'https://corsproxy.io/?url=https://github.com/eadmaster/pcrown/releases/latest/download/Princess.Crown.English.Offline.Patcher.zip',
 					patches: [ //information about patches inside the zip
 					{
 						file: 'Princess.Crown.Japan.1M.Track.01.bin.xdelta', //required, must match the patch file name in the zip
@@ -196,7 +196,7 @@
 	    
             
             if (markdownUrl) {
-                fetch(markdownUrl, { mode: 'no-cors' })
+                fetch(markdownUrl)
                     .then(response => response.text())
                     .then(text => contentDiv.innerHTML = marked.parse(text))
                     .catch(error => contentDiv.innerHTML = "Error loading content.");
@@ -296,7 +296,6 @@
 		<div style="text-align: center">
 			TIP: Issues with the online patcher tool? Try <a href="https://github.com/eadmaster/pcrown/releases/latest/download/Princess.Crown.English.Offline.Patcher.zip">this offline patcher</a> instead.
 		</div>
-
 	</div>
 	
 	<p>
