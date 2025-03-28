@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html translate="no">
+
+<head>
+	<title>Princess Crown Translation Online Patcher</title>
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+	<!-- Rom Patcher JS needed CSS/JS files -->
+	<link type="text/css" rel="stylesheet" href="./rom-patcher-js/style.css" media="all" />
+	<script type="text/javascript" src="./rom-patcher-js/RomPatcher.webapp.js"></script>
+
+	<!-- Rom Patcher JS initialization -->
+	<script type="text/javascript">
+		window.addEventListener('load', function (evt) {
+			try {
+				RomPatcherWeb.initialize({
+					language: 'en',
+					requireValidation: true
+				},
+				/* 
+				{
+					// single:
+					file: 'https://cors-anywhere.herokuapp.com/https://github.com/eadmaster/pcrown/releases/latest/download/Princess.Crown.Japan.1M.Track.01.bin.xdelta', //alt: zip containing multiple patches
+					name: 'Normal/vanilla version',
+					inputCrc32: 0x005affaf, //add CRC32 checksum validation to patch
+					inputMd5: '372041b64f903fb8e2049ed6561f91a9', //add MD5 checksum validation to patch (must be a string!)
+					description: 'Basic UI and QoL enhancements, reccomended for first time players',
+					outputName: 'Princess Crown (Japan) (1M) (Track 01) (patched)', //patched ROM name
+				}*/
+				{
+					// multiple https://github.com/marcrobledo/RomPatcher.js/wiki/Embedding-Rom-Patcher-JS
+					file: 'https://github.com/eadmaster/pcrown/releases/latest/download/Princess.Crown.English.Offline.Patcher.zip',
+					patches: [ //information about patches inside the zip
+					{
+						file: 'Princess.Crown.Japan.1M.Track.01.bin.xdelta', //required, must match the patch file name in the zip
+						name: 'Normal/vanilla version',
+						inputCrc32: [0x005affaf], //an array of valid checksums
+						description: 'Basic UI and QoL enhancements, reccomended for first time players',
+						outputName: 'Princess Crown (Japan) (1M) (Track 01) (patched)'
+					},
+					{
+						file: 'Princess.Crown.Japan.1M.Track.01.EX.bin.xdelta',
+						name: 'EX version',
+						inputCrc32: [0x005affaf],
+						description: 'More UI and QoL enhancements, increased resolution and transparency',
+						outputName: 'Princess Crown (Japan) (1M) (Track 01) (patched)'
+					},
+					{
+						file: 'Princess.Crown.Japan.1M.Track.01.LT.bin.xdelta',
+						name: 'LT/Lite version',
+						inputCrc32: [0x005affaf],
+						description: 'No UI and QoL enhancements, literal items descriptions',
+						outputName: 'Princess Crown (Japan) (1M) (Track 01) (patched)'
+					}
+				]}
+				);
+			} catch (err) {
+				var message = err.message;
+				if (/incompatible browser/i.test(message) || /variable RomPatcherWeb/i.test(message))
+					message = 'Your browser is outdated and it is not compatible with this app.';
+
+				document.getElementById('rom-patcher-container').innerHTML = message;
+				document.getElementById('rom-patcher-container').style.color = 'red';
+			}
+
+			/*
+			const dropdown = document.getElementById("patchSelector");
+
+			const patchOptions = {
+				option1: {
+						file: 'https://cors-anywhere.herokuapp.com/https://github.com/eadmaster/pcrown/releases/latest/download/Princess.Crown.Japan.1M.Track.01.bin.xdelta', //required, must match the patch file name in the zip
+						name: 'Normal/vanilla version',
+						inputCrc32: [0x005affaf], //an array of valid checksums
+						description: 'Basic UI and QoL enhancements, reccomended for first time players',
+						outputName: 'Princess Crown (Japan) (1M) (Track 01) (patched)'
+				},
+				option2: {
+						file: 'https://cors-anywhere.herokuapp.com/https://github.com/eadmaster/pcrown/releases/latest/download/Princess.Crown.Japan.1M.Track.01.EX.bin.xdelta',
+						name: 'EX version',
+						inputCrc32: [0x005affaf],
+						description: 'More UI and QoL enhancements, increased resolution and transparency',
+						outputName: 'Princess Crown (Japan) (1M) (Track 01) (patched)'
+				},
+				option3: {
+						file: 'https://cors-anywhere.herokuapp.com/https://github.com/eadmaster/pcrown/releases/latest/download/Princess.Crown.Japan.1M.Track.01.LT.bin.xdelta',
+						name: 'LT/Lite version',
+						inputCrc32: [0x005affaf],
+						description: 'No UI and QoL enhancements, literal items descriptions',
+						outputName: 'Princess Crown (Japan) (1M) (Track 01) (patched)'
+					}
+			};
+
+			dropdown.addEventListener("change", function () {
+				const selectedValue = dropdown.value;
+				if (patchOptions[selectedValue]) {
+					RomPatcherWeb.setEmbeddedPatches(patchOptions[selectedValue]);
+					RomPatcherWeb.initialize({
+						language: 'en',
+						requireValidation: true
+					}, 	
+					patchOptions[selectedValue]);
+					// TODO: force UI refresh
+				}
+			});*/
+		});
+	</script>
+	
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .tabs { display: flex; justify-content: center;  cursor: pointer; gap: 10px; }
+        .tab {
+			padding: 10px 20px;
+			border: 1px solid #600000;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            background-color: #8B0000; /* Dark red */
+            border-radius: 15px 15px 0 0;
+            font-weight: bold; /* Bold text */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .tab:hover { background-color: #A52A2A; /* Slightly lighter red */ }
+        .tab.active {
+            background-color: #600000; /* Darker red for active tab */
+            color: white;
+            font-weight: bold;
+        }
+        .content {
+            /*border: 1px solid #ccc;*/
+            padding: 20px;
+            min-height: 200px;
+            border-radius: 15px 15px 15px 15px;  /* rounded corners */
+			//background-color: white;
+			background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+			color: black; /* Black text */
+			font-family: "Arial Narrow", Tahoma, "Trebuchet MS", sans-serif; /* Arial Narrow as primary font */
+			//position: absolute;
+			//left: 50%;
+			//transform: translate(-50%, -50%);
+			width: 75vw;
+			margin: auto;
+        }
+        .content a {
+			color: black; /* Links will be black */	
+		}
+		.content table {
+			width: 75%; /* Table takes 75% of content width */
+		}
+		th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+		}
+    </style>
+</head>
+
+<body style="background-color: #440000; color: #e8e8e8;  ">  <!-- background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));, url('PrincessCrown_Saturn_JP_Art_Cover.jpg') -->
+	
+	
+			<!--https://buttons.github.io/
+			<h2><a href="https://github.com/eadmaster/pcrown" target="_blank" style="color: #e8e8e8; text-decoration: none;">Project Page</a> </h2>
+			
+			<script async defer src="https://buttons.github.io/buttons.js"></script>
+			<a class="github-button" href="https://github.com/eadmaster/pcrown" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="">Project page</a>
+			
+			https://github.com/warengonzaga/fork-corner
+			-->
+			
+			<!--
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-corner/dist/fork-corner.min.css">
+			<script src="https://cdn.jsdelivr.net/npm/fork-corner/dist/fork-corner.min.js" defer></script>
+			<a href="https://github.com/eadmaster/pcrown" target="_blank" id="fork-corner" class="fork-corner fc-pos-tr fc-animate fc-theme-git" style="color: #e8e8e8">Github</a>
+			-->
+			
+			<!-- ALT. https://github.com/simonwhitaker/github-fork-ribbon-css
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+			<a class="github-fork-ribbon" href="https://github.com/eadmaster/pcrown" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+			-->
+
+			<!-- official, using an image https://github.blog/news-insights/the-library/github-ribbons/ 
+			<a href="https://github.com/eadmaster/pcrown"><img loading="lazy" decoding="async" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png" class="attachment-full size-full" alt="Fork me on GitHub"></a>
+			-->
+			
+			<!-- using css https://codepo8.github.io/css-fork-on-github-ribbon/ --> 
+			<style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub"><a href="https://github.com/eadmaster/pcrown">Fork me on GitHub</a></span>
+			
+			
+	<div class="tabs">
+        <div class="tab active" onclick="switchTab(event, 'tab1')">Patch 🩹</div>
+        <div class="tab" onclick="switchTab(event, 'tab2', 'https://raw.githubusercontent.com/eadmaster/pcrown/refs/heads/master/readme.md')">Readme 📝</div>
+        <div class="tab" onclick="switchTab(event, 'tab3', 'https://raw.githubusercontent.com/wiki/eadmaster/pcrown/FAQs.md')">FAQs ❓</div>
+        <div class="tab" onclick="switchTab(event, 'tab4', 'https://raw.githubusercontent.com/wiki/eadmaster/pcrown/Extras.md')">Extras 🎁</div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/marked-emoji/lib/index.umd.js"></script>-->
+    <script>
+        function switchTab(event, tabId, markdownUrl = null) {
+            document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+            
+            const contentDiv = document.getElementById(tabId);
+            contentDiv.style.display = 'block';
+            event.currentTarget.classList.add('active');
+	    
+	    /*
+
+	const options = {
+		emojis: {
+			"man_shrugging": "❤️",
+			"handshake": "🎉"
+		},
+		renderer: (token) => token.emoji
+	};
+	marked.use(markedEmoji(options));*/
+	    
+            
+            if (markdownUrl) {
+                fetch(markdownUrl)
+                    .then(response => response.text())
+                    .then(text => contentDiv.innerHTML = marked.parse(text))
+                    .catch(error => contentDiv.innerHTML = "Error loading content.");
+            }
+        }
+
+        // Load initial tab
+        switchTab({ currentTarget: document.querySelector('.tab.active') }, 'home');
+    </script>
+    
+    <div id="tab4" class="content" style="display:none;"></div>
+    <div id="tab3" class="content" style="display:none;"></div>
+    <div id="tab2" class="content" style="display:none;"></div>
+	<div id="tab1" class="content">
+		<header style="text-align: center">
+			<h1>Princess Crown Translation Online Patcher</h1>
+		</header>
+
+
+		<!-- Rom Patcher JS container -->
+		<!--
+			The following elements are required for Rom Patcher JS to work:
+				#rom-patcher-input-file-rom
+				#rom-patcher-select-patch
+				#rom-patcher-button-apply
+			The rest of elements are informative and can be removed, though it's recommended to keep them for a better user experience.
+		-->
+		<div id="rom-patcher-container">
+			<div class="rom-patcher-row margin-bottom" id="rom-patcher-row-file-rom">
+				<div class="text-right"><label for="rom-patcher-input-file-rom" data-localize="yes">ROM file:</label></div>
+				<div class="rom-patcher-container-input">
+					<input type="file" id="rom-patcher-input-file-rom" class="empty" disabled />
+				</div>
+			</div>
+			<div class="margin-bottom text-selectable text-mono text-muted" id="rom-patcher-rom-info">
+				<div class="rom-patcher-row">
+					<div class="text-right">Needed: <a href="http://redump.org/disc/4901/">redump.org track 1 bin file</a></div>
+				</div>
+				<div class="rom-patcher-row">
+					<div class="text-right">+ <a href="https://raw.githubusercontent.com/eadmaster/pcrown/refs/heads/master/src/buildcd/Princess%20Crown%20(Japan)%20(1M)%20(English).cue">this cue file</a></div>
+				</div>
+				<div class="rom-patcher-row">
+					<div class="text-right">CRC32:</div>
+					<div class="text-truncate"><span id="rom-patcher-span-crc32"></span></div>
+				</div>
+				<div class="rom-patcher-row">
+					<div class="text-right">MD5:</div>
+					<div class="text-truncate"><span id="rom-patcher-span-md5"></span></div>
+				</div>
+				<div class="rom-patcher-row">
+					<div class="text-right">SHA-1:</div>
+					<div class="text-truncate"><span id="rom-patcher-span-sha1"></span></div>
+				</div>
+				<div class="rom-patcher-row" id="rom-patcher-row-info-rom">
+					<div class="text-right">ROM:</div>
+					<div class="text-truncate"><span id="rom-patcher-span-rom-info"></span></div>
+				</div>
+			</div>
+
+			<div class="rom-patcher-row margin-bottom" id="rom-patcher-row-file-patch">
+				<div class="text-right"><label for="rom-patcher-input-file-patch" data-localize="yes">Patch file:</label>
+				</div>
+				<div class="rom-patcher-container-input">
+					<select id="rom-patcher-select-patch"></select>
+					<!--
+					<select id="patchSelector">
+						<option value="" disabled selected>Select a patch</option>
+						<option value="option1" selected>Normal/vanilla version</option>
+						<option value="option2">EX version</option>
+						<option value="option3">LT/Lite version</option>
+					</select>
+					-->
+				</div>
+			</div>
+			<div class="rom-patcher-row margin-bottom" id="rom-patcher-row-patch-description">
+				<div class="text-right text-mono text-muted" data-localize="yes">Description:</div>
+				<div class="text-truncate" id="rom-patcher-patch-description"></div>
+			</div>
+			<div class="rom-patcher-row margin-bottom text-selectable text-mono text-muted"
+				id="rom-patcher-row-patch-requirements">
+				<div class="text-right text-mono" id="rom-patcher-patch-requirements-type">ROM requirements:</div>
+				<div class="text-truncate" id="rom-patcher-patch-requirements-value"></div>
+			</div>
+
+			<div class="text-center" id="rom-patcher-row-apply">
+				<div id="rom-patcher-row-error-message" class="margin-bottom"><span id="rom-patcher-error-message"></span>
+				</div>
+				<button id="rom-patcher-button-apply" data-localize="yes" disabled>Apply patch</button>
+			</div>
+		</div>
+
+		<div id="rom-patcher-powered" class="text-center" >
+			<a href="https://github.com/marcrobledo/RomPatcher.js" target="_blank"><img src="rom-patcher-js/assets/powered_by_rom_patcher_js.png" loading="lazy" />Powered by Rom Patcher JS</a>
+		</div>
+		<div style="text-align: center">
+			TIP: Issues with the online patcher tool? Try <a href="https://github.com/eadmaster/pcrown/releases/latest/download/Princess.Crown.English.Offline.Patcher.zip">this offline patcher</a> instead.
+		</div>
+
+	</div>
+	
+	<p>
+	</p>
+</body>
+
+</html>
