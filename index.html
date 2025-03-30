@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html translate="no">
+<html>
 
 <head>
 	<title>Princess Crown Translation Online Patcher</title>
@@ -30,6 +30,7 @@
 				}*/
 				{
 					// multiple https://github.com/marcrobledo/RomPatcher.js/wiki/Embedding-Rom-Patcher-JS
+					//file: 'Princess.Crown.English.Offline.Patcher.zip',
 					file: 'https://corsproxy.io/?url=https://github.com/eadmaster/pcrown/releases/latest/download/Princess.Crown.English.Offline.Patcher.zip',
 					patches: [ //information about patches inside the zip
 					{
@@ -151,29 +152,43 @@
             padding: 8px;
             text-align: left;
 		}
+	body {
+		background-color: #440000;
+		color: #e8e8e8;
+		//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/Princess.Crown.full.632620.jpg');  // all chars, repeated
+		// background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/87690_p0.jpg');  // all chars, repeated
+		//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/ru_23247813_p0.jpg');  // forest, pastel colors
+		//background-image: url('bg/Princess.Crown.full.632620.jpg');  /* girl with book */
+		//background-image: url('bg/_Princess.Crown.full.632622.chibi.jpg'); /* gradriel+edward chibi */
+		//background-image: url('bg/436313_p0.jpg'); /* gradriel+aria chibi */
+		//background-image: url('bg/74215_p0.png'); /* gradriel pixel art */
+		//background-repeat: no-repeat; 
+		//background-position: bottom right;
+		//background-size: auto;
+		//background-attachment: fixed;
+	}
     </style>
 </head>
 
-<body style="background-color: #440000; color: #e8e8e8;  ">  <!-- background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));, url('PrincessCrown_Saturn_JP_Art_Cover.jpg') -->
+<body>
 	
 	<!-- github ribbon -->
-			<!-- official, using an image https://github.blog/news-insights/the-library/github-ribbons/ 
-			<a href="https://github.com/eadmaster/pcrown"><img loading="lazy" decoding="async" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png" class="attachment-full size-full" alt="Fork me on GitHub"></a>
-			-->
-			
-			<!-- using css https://codepo8.github.io/css-fork-on-github-ribbon/ --> 
-			<style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub"><a href="https://github.com/eadmaster/pcrown">Fork me on GitHub</a></span>
-			
+		<!-- official, using an image https://github.blog/news-insights/the-library/github-ribbons/ 
+		<a href="https://github.com/eadmaster/pcrown"><img loading="lazy" decoding="async" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png" class="attachment-full size-full" alt="Fork me on GitHub"></a>
+		-->
+		
+		<!-- using css https://codepo8.github.io/css-fork-on-github-ribbon/ --> 
+		<style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub"><a href="https://github.com/eadmaster/pcrown">Fork me on GitHub</a></span>
+		
 			
 	<div class="tabs">
-        <div class="tab active" onclick="switchTab(event, 'tab1')">Patch 🩹</div>
+        <div class="tab active" onclick="switchTab(event, 'tab1')">Patcher 🩹</div>
         <div class="tab" onclick="switchTab(event, 'tab2', 'https://raw.githubusercontent.com/eadmaster/pcrown/refs/heads/master/readme.md')">Readme 📝</div>
         <div class="tab" onclick="switchTab(event, 'tab3', 'https://raw.githubusercontent.com/wiki/eadmaster/pcrown/FAQs.md')">FAQs ❓</div>
         <div class="tab" onclick="switchTab(event, 'tab4', 'https://raw.githubusercontent.com/wiki/eadmaster/pcrown/Extras.md')">Extras 🎁</div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/marked-emoji/lib/index.umd.js"></script>-->
     <script>
         function switchTab(event, tabId, markdownUrl = null) {
             document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
@@ -181,19 +196,7 @@
             
             const contentDiv = document.getElementById(tabId);
             contentDiv.style.display = 'block';
-            event.currentTarget.classList.add('active');
-	    
-	    /*
-
-	const options = {
-		emojis: {
-			"man_shrugging": "❤️",
-			"handshake": "🎉"
-		},
-		renderer: (token) => token.emoji
-	};
-	marked.use(markedEmoji(options));*/
-	    
+            event.currentTarget.classList.add('active');	    
             
             if (markdownUrl) {
                 fetch(markdownUrl)
@@ -213,6 +216,7 @@
 	<div id="tab1" class="content">
 		<header style="text-align: center">
 			<h1>Princess Crown Translation Online Patcher</h1>
+			<h3>Current Release: v1.0RC1</h3>
 		</header>
 
 
@@ -290,16 +294,18 @@
 			</div>
 		</div>
 
-		<div id="rom-patcher-powered" class="text-center" >
-			<a href="https://github.com/marcrobledo/RomPatcher.js" target="_blank"><img src="rom-patcher-js/assets/powered_by_rom_patcher_js.png" loading="lazy" />Powered by Rom Patcher JS</a>
+		<div id="rom-patcher-powered" class="text-center">
+			<a href="https://github.com/marcrobledo/RomPatcher.js" target="_blank" style="color: black;"><img src="rom-patcher-js/assets/powered_by_rom_patcher_js.png" loading="lazy"/>Powered by Rom Patcher JS</a>
 		</div>
-		<div style="text-align: center">
-			TIP: Issues with the online patcher tool? Try <a href="https://github.com/eadmaster/pcrown/releases/latest/download/Princess.Crown.English.Offline.Patcher.zip">this offline patcher</a> instead.
+		<div style="display: flex; justify-content: center; border: 1px solid #ccc; padding: 20px;">
+			<h3 style="text-align: center">Tips:</h3><br>
+			<ul>
+			 <li>Keep the patched file name unchanged</li>
+			 <li>Download and use <a href="https://raw.githubusercontent.com/eadmaster/pcrown/refs/heads/master/src/buildcd/Princess%20Crown%20(Japan)%20(1M)%20(English).cue">this cue sheet</a> to play the game.</li>
+			 <li>Problems? Try <a href="https://github.com/eadmaster/pcrown/blob/master/readme.md#patch-instructions--">these alternative patchers</a>.</li>
+			</ul>
 		</div>
 	</div>
-	
-	<p>
-	</p>
 </body>
 
 </html>
