@@ -155,17 +155,20 @@
 	body {
 		background-color: #440000;
 		color: #e8e8e8;
-		//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/Princess.Crown.full.632620.jpg');  // all chars, repeated
-		// background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/87690_p0.jpg');  // all chars, repeated
+
+		/*
+		//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/_Princess.Crown.full.410998.jpg');  // all chars, pastel colors
+		//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/_Princess.Crown.full.632622.chibi.jpg'); // gradriel+edward chibi
 		//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/ru_23247813_p0.jpg');  // forest, pastel colors
-		//background-image: url('bg/Princess.Crown.full.632620.jpg');  /* girl with book */
-		//background-image: url('bg/_Princess.Crown.full.632622.chibi.jpg'); /* gradriel+edward chibi */
-		//background-image: url('bg/436313_p0.jpg'); /* gradriel+aria chibi */
-		//background-image: url('bg/74215_p0.png'); /* gradriel pixel art */
+		//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/Princess.Crown.full.632620.jpg');  // girl with book
+		// background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/87690_p0.jpg');  // all chars, repeated
+		//background-image: url('bg/Princess.Crown.full.632620.jpg');  // girl with book
+		//background-image: url('bg/436313_p0.jpg'); // gradriel+aria chibi
 		//background-repeat: no-repeat; 
 		//background-position: bottom right;
 		//background-size: auto;
 		//background-attachment: fixed;
+		*/
 	}
     </style>
 </head>
@@ -209,16 +212,39 @@
         // Load initial tab
         switchTab({ currentTarget: document.querySelector('.tab.active') }, 'home');
     </script>
+    <script>
+        async function fetchLatestRelease() {
+            console.log("fetchLatestRelease");
+            const owner = "eadmaster";
+            const repo = "pcrown";
+            const url = `https://api.github.com/repos/${owner}/${repo}/releases/latest`;
+            
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    console.error("Failed to fetch release");
+                    throw new Error("Failed to fetch release");
+                }
+                const data = await response.json();
+                document.getElementById("latest-release").innerHTML = `<h3>Current Release: ${data.tag_name}</h3>`;
+            } catch (error) {
+                document.getElementById("latest-release").innerHTML = "<h3>Error fetching release</h3>";
+                console.error(error);
+            }
+        }
+
+        fetchLatestRelease();
+    </script>
     
     <div id="tab4" class="content" style="display:none;"></div>
     <div id="tab3" class="content" style="display:none;"></div>
     <div id="tab2" class="content" style="display:none;"></div>
+    
 	<div id="tab1" class="content">
 		<header style="text-align: center">
 			<h1>Princess Crown Translation Online Patcher</h1>
-			<h3>Current Release: v1.0RC1</h3>
+			<div id="latest-release"><h3>Current Release: </h3></div>
 		</header>
-
 
 		<!-- Rom Patcher JS container -->
 		<!--
