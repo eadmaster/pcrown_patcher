@@ -1,0 +1,73 @@
+.tabs { 
+    display: flex; 
+    justify-content: center;
+    cursor: pointer;
+    gap: 10px;
+}
+.tab {
+    padding: 10px 20px;
+    border: 1px solid #600000;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background-color: #8B0000; /* Dark red */
+    border-radius: 15px 15px 0 0;
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s;
+}
+.tab:hover {
+    background-color: #A52A2A; /* Slightly lighter red */
+}
+.tab.active {
+    background-color: #600000; /* Darker red for active tab */
+    color: white;
+    font-weight: bold;
+}
+.content {
+    /*border: 1px solid #ccc;*/
+    padding: 20px;
+    min-height: 200px;
+    border-radius: 15px 15px 15px 15px;  /* rounded corners */
+    //background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+    color: black; /* Black text */
+    font-family: "Arial Narrow", Tahoma, "Trebuchet MS", sans-serif; /* Arial Narrow as primary font */
+    //position: absolute;
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+    width: 75vw;
+    margin: auto;
+}
+.content a {
+    color: black; /* Links will be black */	
+}
+.content table {
+    width: 75%; /* Table takes 75% of content width */
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+body {
+font-family: Arial, sans-serif;
+background-color: #440000;
+color: #e8e8e8;
+
+/*
+background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), // Dark overlay to reduce brightness
+        linear-gradient(rgba(255, 150, 50, 0.5), rgba(255, 100, 0, 0.5)), // Orange tint
+        url('bg/ru_23247813_p0.jpg'); // Background image
+//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/_Princess.Crown.full.410998.jpg');  // all chars, pastel colors
+//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/_Princess.Crown.full.632622.chibi.jpg'); // gradriel+edward chibi
+//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/ru_23247813_p0.jpg');  // forest, pastel colors
+//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/Princess.Crown.full.632620.jpg');  // girl with book
+// background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bg/87690_p0.jpg');  // all chars, repeated
+//background-image: url('bg/Princess.Crown.full.632620.jpg');  // girl with book
+//background-image: url('bg/436313_p0.jpg'); // gradriel+aria chibi
+//background-repeat: no-repeat; 
+//background-position: bottom right;
+//background-size: auto;
+//background-attachment: fixed;
+*/
+}
