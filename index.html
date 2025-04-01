@@ -171,7 +171,7 @@
                     throw new Error("Failed to fetch release");
                 }
                 const data = await response.json();
-                document.getElementById("latest-release").innerHTML = `<h3>Current Release: ${data.tag_name}</h3>`;
+                document.getElementById("latest-release").innerHTML = `<h3>Latest Release: ${data.tag_name}</h3>`;
             } catch (error) {
                 document.getElementById("latest-release").innerHTML = "<h3>Error fetching release</h3>";
                 console.error(error);
@@ -188,7 +188,7 @@
 	<div id="tab1" class="content">
 		<header style="text-align: center">
 			<h1>Princess Crown Translation Online Patcher</h1>
-			<div id="latest-release"><h3>Current Release: </h3></div>
+			<div id="latest-release"><h3>Latest Release: </h3></div>
 		</header>
 
 		<!-- Rom Patcher JS container -->
@@ -208,7 +208,7 @@
 			</div>
 			<div class="margin-bottom text-selectable text-mono text-muted" id="rom-patcher-rom-info">
 				<div class="rom-patcher-row">
-					<div class="text-right">Needed: <a href="http://redump.org/disc/4901/">redump.org track 1 bin file</a></div>
+					<div class="text-right">Required: <a href="http://redump.org/disc/4901/">redump.org track 1 bin file</a></div>
 				</div>
 				<!--
 				<div class="rom-patcher-row">
@@ -219,10 +219,12 @@
 					<div class="text-right">CRC32:</div>
 					<div class="text-truncate"><span id="rom-patcher-span-crc32"></span></div>
 				</div>
+				<!--
 				<div class="rom-patcher-row">
 					<div class="text-right">MD5:</div>
 					<div class="text-truncate"><span id="rom-patcher-span-md5"></span></div>
 				</div>
+				-->
 				<div class="rom-patcher-row">
 					<div class="text-right">SHA-1:</div>
 					<div class="text-truncate"><span id="rom-patcher-span-sha1"></span></div>
@@ -271,7 +273,7 @@
 		<div style="display: flex; justify-content: center; border: 1px solid #ccc; padding: 20px;">
 			<h3 style="text-align: center">Tips:</h3><br>
 			<ul>
-			 <li>Keep the patched file name unchanged</li>
+			 <li>Keep the patched file name unchanged.</li>
 			 <li>Download and use <a href="https://raw.githubusercontent.com/eadmaster/pcrown/refs/heads/master/src/buildcd/Princess%20Crown%20(Japan)%20(1M)%20(English).cue">this cue sheet</a> to play the game.</li>
 			 <li>Problems? Try <a href="https://github.com/eadmaster/pcrown/blob/master/readme.md#patch-instructions--">these alternative patchers</a>.</li>
 			</ul>
