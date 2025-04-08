@@ -20,11 +20,13 @@
 					requireValidation: true,
 					onloadpatch: function (romFile) {
 						// change default patch to Normal (autoselect the 1st result of filesorting otherwise)
+						/*
 						if (hasEventBeenTriggered) return; 
-						document.getElementById('rom-patcher-select-patch').selectedIndex = 1;
+						document.getElementById('rom-patcher-select-patch').selectedIndex = 0;
 						document.getElementById('rom-patcher-select-patch').dispatchEvent(new Event('change'));
 						//document.getElementById('rom-patcher-select-patch').selectElement.onchange();
 						hasEventBeenTriggered = true;
+						*/
 					},
 				},
 				/* 
@@ -224,11 +226,11 @@
 					<div class="text-right">MD5:</div>
 					<div class="text-truncate"><span id="rom-patcher-span-md5"></span></div>
 				</div>
-				-->
 				<div class="rom-patcher-row">
 					<div class="text-right">SHA-1:</div>
 					<div class="text-truncate"><span id="rom-patcher-span-sha1"></span></div>
 				</div>
+				-->
 				<div class="rom-patcher-row" id="rom-patcher-row-info-rom">
 					<div class="text-right">ROM:</div>
 					<div class="text-truncate"><span id="rom-patcher-span-rom-info"></span></div>
@@ -276,6 +278,7 @@
 			 <li>Keep the patched file name unchanged.</li>
 			 <li>Download and use <a href="https://raw.githubusercontent.com/eadmaster/pcrown/refs/heads/master/src/buildcd/Princess%20Crown%20(Japan)%20(1M)%20(English).cue">this cue sheet</a> to play the game.</li>
 			 <li>Problems? Try <a href="https://github.com/eadmaster/pcrown/blob/master/readme.md#patch-instructions--">these alternative patchers</a>.</li>
+			 <li>First time playing? Check the <a href="https://archive.org/details/sat_princesscrown_manual_j_translated/mode/1up">translated manual</a>.</li>
 			</ul>
 		</div>
 	</div>
